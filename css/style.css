@@ -1,69 +1,307 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+    --color-neutral-0: #0e0c0c;
+    --color-neutral-10: #171717;
+    --color-neutral-30: #a8a29e;
+    --color-neutral-40: #f5f5f5;
+}
+
+* {
+    font-family: 'inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+
+}
+
+body,
+ul,
+li,
+p {
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial;
+    text-align: center;
 }
-/*/ header/*/
-.top{
-    background-color: #d4d4d4;
-    border-bottom: 10px solid var(--border-primary);
-    position: sticky;
-    width: auto;
-    height: 60px;
-    box-sizing: border-box;
-    }
-.box{
-    position: absolute;
-    top: 0px;
-    width: 80px;
-    height: 60px;
-    }
-  img{
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 70px;
+    font-family: arial;
+}
+
+/*/ CSS HEADER/*/
+.header {
+    background: #171717;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    height: 100%;
-    }
-.logo{
-    object-fit: cover;
-    }
-.top-navegation{
-    background-color: blue;
-    border-bottom: 4px solid var(--border-primary);
-    position: relative;
-    width: auto;
-    height: 30px;
-    box-sizing: border-box;
 }
 
+.menu {
+    display: flex;
+    overflow: hidden;
+    transition: all .5s;
+}
 
-header{
+.menu li {
+    margin-left: 10px;
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+.menu li a {
     display: block;
-    unicode-bidi: isolate;
-    }
-/*/ main /*/
-p{
-    margin: 0px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-
-      
-article {
-    position: absolute;  
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-block: 10% 10%;
-    writing-mode: horizontal-tb;
-    max-inline-size: 400px;
     padding: 10px;
-    background-color: #d4d4d4;
-    background-image: linear-gradient(to bottom,
-    rgb(0 0 0 / 0%),
-      rgb(0 0 0 / 25%)
-    );
 }
-      
-.corpo {
-        box-shadow: 0px 0px 9px rgb(0 0 0 / 70%);
+
+.logo {
+    box-sizing: 0px;
+    width: 25%;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:hover,
+.mobile:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.mobile {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 36px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: none;
+
+}
+
+.mobile:focus~ul {
+    height: 150px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 0px;
     }
 
+    nav{
+        text-align: center;
+        margin: 0;
+        height: 0; 
+        overflow: hidden; 
+        transition: height 0.5s; 
+    }
 
-    /*/ footer /*/
+    .mobile {
+        display: flex; 
+    }
+
+}
+
+
+/*/ CSS MAIN/*/
+h2 {
+    margin: 60px;
+    font-family: arial;
+    text-align: center;
+}
+
+p {
+    font-family: 'Franklin Gothic Medium', Arial;
+    font-size: 1.8rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.lobby {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.lobby>div {
+    flex: 1 -1 200px;
+    margin: 10px;
+}
+
+/*/CSS FOOTER/*/
+footer {
+    width: 100%;
+    color: var(--color-neutral-40);
+}
+
+.footer-link {
+    text-decoration: none;
+}
+
+#logo{
+    padding: 0px 4rem ;
+}
+#footer_content {
+    background-color: var(--color-neutral-10);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3rem 3.5rem;
+}
+
+#footer_contacts p {
+    margin-bottom: 0.75rem;
+}
+
+#footer_social_media {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+#footer_social_media .footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--color-neutral-40);
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+#footer_social_media .footer-link i {
+    font-size: 1.25rem;
+}
+
+#footer_social_media .footer-link:hover {
+    opacity: 0.8;
+}
+
+#instagram {
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#facebook {
+    background-color: #4267b3;
+}
+
+#whatsapp {
+    background-color: #25d366;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.footer-list .footer-link {
+    color: var(--color-neutral-30);
+    transition: all 0.4s;
+}
+
+.footer-list .footer-link:hover {
+    color: #7f37c9;
+}
+
+#footer_subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#footer_subscribe p {
+    color: var(--color-neutral-30);
+}
+
+#input_group {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-neutral-0);
+    border-radius: 4px;
+}
+
+#input_group input {
+    all: unset;
+    padding: 0.75rem;
+    width: 100%;
+}
+
+#input_group button {
+    background-color: #7f37c9;
+    border: none;
+    color: var(--color-neutral-40);
+    padding: 0px 1.25rem;
+    font-size: 1.125rem;
+    height: 100%;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+#input_group button:hover {
+    opacity: 0.8;
+}
+
+#footer_copyright {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-neutral-0);
+    font-size: 0.9rem;
+    padding: 1.5rem;
+    font-weight: 100;
+}
+
+@media screen and (max-width: 768px) {
+    #footer_content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    #ul{
+        overflow: none;
+    }
+    #input_group button {
+        padding: 1.25rem;
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    #footer_content {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 3rem 2rem;
+    }
+
+    #footer_subscribe {
+        padding: 2rem 2rem;
+    }
+}
