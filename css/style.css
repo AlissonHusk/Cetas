@@ -23,7 +23,7 @@ p {
     margin: 0px;
     padding: 0px;
     list-style: none;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-family: Arial;
     text-align: center;
 }
@@ -46,10 +46,10 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
+    padding: 8px;
 }
 
-.header > div {
+.header>div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,6 +57,9 @@ h1 {
 }
 
 .menu {
+    position: absolute;
+    top: 8px;
+    right: 15px;
     display: flex;
     overflow: hidden;
     transition: all .5s;
@@ -70,13 +73,13 @@ h1 {
 
 .menu li a {
     display: block;
-    padding: 10px;
+    padding: 20px;
 }
 
 .logo {
     box-sizing: 0px;
-    width: 25%;
-    padding: 10px;
+    width: 37%;
+    padding: 1px;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
@@ -86,6 +89,7 @@ li:hover,
 .mobile:hover {
     cursor: pointer;
     opacity: 0.5;
+    transition: 0.4s;
 }
 
 .mobile {
@@ -93,9 +97,7 @@ li:hover,
     border: none;
     color: white;
     font-size: 36px;
-    position: absolute;
     right: 10px;
-    top: 10px;
     display: none;
 
 }
@@ -106,20 +108,21 @@ li:hover,
 
 @media (max-width: 768px) {
     nav {
+        display: none;
         flex-direction: column;
         padding: 0px;
     }
 
-    nav{
+    nav {
         text-align: center;
         margin: 0;
-        height: 0; 
-        overflow: hidden; 
-        transition: height 0.5s; 
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s;
     }
 
     .mobile {
-        display: flex; 
+        display: flex;
     }
 
 }
@@ -164,9 +167,10 @@ footer {
     text-decoration: none;
 }
 
-#logo{
-    padding: 0px 4rem ;
+#logo {
+    padding: 0px 4rem;
 }
+
 #footer_content {
     background-color: var(--color-neutral-10);
     display: grid;
@@ -286,9 +290,10 @@ footer {
         gap: 2rem;
     }
 
-    #ul{
+    #ul {
         overflow: none;
     }
+
     #input_group button {
         padding: 1.25rem;
         font-size: 1.25rem;
